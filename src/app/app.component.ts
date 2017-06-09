@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Location } from '@angular/common';
 import {Router} from "@angular/router";
+import {environment} from "../environments/environment";
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,7 @@ import {Router} from "@angular/router";
 })
 export class AppComponent {
   title = 'app';
+  version = environment.version;
 
   constructor(private location: Location,
               private router: Router) { } // inject Location into class constructor
