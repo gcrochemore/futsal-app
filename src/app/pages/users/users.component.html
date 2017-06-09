@@ -1,211 +1,48 @@
-<ng-container *ngFor="let player of players">
-  <div class="player-fut" [ngClass]="(player?.rating > 78)?'gold-fut':(player?.rating < 70)?'bronze-fut':'silver-fut'">
-    <div class="name">
-      {{ player?.name.toUpperCase() }}
-    </div>
-    <div class="rating">
-      {{ player?.rating }}
-    </div>
-    <div class="picture">
-      <img src="../../../assets/images/fifa/players/{{ player?.picture }}">
-    </div>
-    <div class="company">
-      <img src="../../../assets/images/fifa/companies/{{ player?.company }}">
-    </div>
-    <div class="nationality">
-      <img src="../../../assets/images/fifa/nationalities/french.png">
-    </div>
 
-    <div class="attr1">
-      89 PAC
-    </div>
-
-    <div class="attr2">
-      90 SHO
-    </div>
-
-    <div class="attr3">
-      86 PAS
-    </div>
-
-    <div class="attr4">
-      96 DRI
-    </div>
-
-    <div class="attr5">
-      26 DEF
-    </div>
-
-    <div class="attr6">
-      61 PHY
-    </div>
-  </div>     
-</ng-container>
-
+  <button (click)="sort_by_rating()">Trier par note</button>
 
 <ng-container *ngFor="let player of players_api">
   <div class="player-fut" [ngClass]="(player?.rating > 78)?'gold-fut':(player?.rating < 70)?'bronze-fut':'silver-fut'">
     <div class="name">
-      {{ player?.name.toUpperCase() }}
+      {{ player?.name?.toUpperCase() }}
     </div>
     <div class="rating">
-      {{ player?.rating }}
+      {{ player?.rating | number : '1.0-0'  }}
     </div>
     <div class="picture">
-      <img src="../../../assets/images/fifa/players/{{ player?.picture }}">
+      <img src="{{ player?.picture }}">
     </div>
-    <div class="company">
-      <img src="../../../assets/images/fifa/companies/{{ player?.company }}">
+    <div class="company" *ngIf="player?.company?.picture != null">    
+      <img src="../../../assets/images/fifa/companies/{{ player?.company?.picture }}">
     </div>
     <div class="nationality">
       <img src="../../../assets/images/fifa/nationalities/french.png">
     </div>
 
     <div class="attr1">
-      89 PAC
+      {{ player?.goal }} BUT
     </div>
 
     <div class="attr2">
-      90 SHO
+      {{ (player?.goal_average_by_match || 0) | number : '1.1-1' }} B/M
     </div>
 
     <div class="attr3">
-      86 PAS
+      {{ player?.match }} MAT
     </div>
 
     <div class="attr4">
-      96 DRI
+      {{ player?.assist }} AST
     </div>
 
     <div class="attr5">
-      26 DEF
+      {{ (player?.assist_average_by_match || 0) | number : '1.1-1' }} A/M
     </div>
 
     <div class="attr6">
-      61 PHY
+      {{ player?.match_with_stats }} M/S
     </div>
   </div>     
 </ng-container>
 
 
-
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-<div class="other-player">
-
-
-<div class="row">
-  <div class="col">
-
-    <div id="player" class="gold card-generator playercard centered card-large fut17 silver">
-      <div id="art" class="playercard-art not-draggable"></div>
-      <div id="name" class="input-toggle playercard-name">MESSI</div>
-      <div id="rating" class="input-toggle playercard-rating">93</div>
-      <div id="position" class="input-toggle playercard-position">RW</div>
-      
-      <div id="attr1" class="input-toggle playercard-attr playercard-attr1">89 PAC</div>
-      <div id="attr2" class="input-toggle playercard-attr playercard-attr2">90 SHO</div>
-      <div id="attr3" class="input-toggle playercard-attr playercard-attr3">86 PAS</div>
-      <div id="attr4" class="input-toggle playercard-attr playercard-attr4">96 DRI</div>
-      <div id="attr5" class="input-toggle playercard-attr playercard-attr5">26 DEF</div>
-      <div id="attr6" class="input-toggle playercard-attr playercard-attr6">61 PHY</div>
-      
-      <div id="nation" class="playercard-nation change-nation draggable ui-draggable"><img src="http://futhead.cursecdn.com/static/img/17/nations/18.png"></div>
-      <div id="club" class="playercard-club change-club draggable ui-draggable"><img src="http://futhead.cursecdn.com/static/img/17/clubs/241.png"></div>
-      <div id="picture" class="playercard-picture change-player draggable ui-draggable"><img src="http://futhead.cursecdn.com/static/img/17/players/158023.png"></div>
-      <div class="playercard-chem not-draggable chem-icon style-basic" src="/static/img/chemistry/undefined.png">
-          <span id="chem" class="chem-name input-toggle">BASIC</span>
-          <span id="ruler" class="hidee"></span>
-      </div>
-      <input id="custom-text" class="hidee">
-    </div>
-
-  </div>
-  <div class="col">
-
-
-
-    <div id="player" class="gold card-generator playercard centered card-large fut17 gold">
-      <div id="art" class="playercard-art not-draggable"></div>
-      <div id="name" class="input-toggle playercard-name">MESSI</div>
-      <div id="rating" class="input-toggle playercard-rating">93</div>
-      <div id="position" class="input-toggle playercard-position">RW</div>
-      
-      <div id="attr1" class="input-toggle playercard-attr playercard-attr1">89 PAC</div>
-      <div id="attr2" class="input-toggle playercard-attr playercard-attr2">90 SHO</div>
-      <div id="attr3" class="input-toggle playercard-attr playercard-attr3">86 PAS</div>
-      <div id="attr4" class="input-toggle playercard-attr playercard-attr4">96 DRI</div>
-      <div id="attr5" class="input-toggle playercard-attr playercard-attr5">26 DEF</div>
-      <div id="attr6" class="input-toggle playercard-attr playercard-attr6">61 PHY</div>
-      
-      <div id="nation" class="playercard-nation change-nation draggable ui-draggable"><img src="http://futhead.cursecdn.com/static/img/17/nations/18.png"></div>
-      <div id="club" class="playercard-club change-club draggable ui-draggable"><img src="http://futhead.cursecdn.com/static/img/17/clubs/241.png"></div>
-      <div id="picture" class="playercard-picture change-player draggable ui-draggable"><img src="http://futhead.cursecdn.com/static/img/17/players/158023.png"></div>
-      <div class="playercard-chem not-draggable chem-icon style-basic" src="/static/img/chemistry/undefined.png">
-          <span id="chem" class="chem-name input-toggle">BASIC</span>
-          <span id="ruler" class="hidee"></span>
-      </div>
-      <input id="custom-text" class="hidee">
-    </div>
-
-  </div>
-  <div class="col">
-
-
-
-    <div id="player" class="gold card-generator playercard centered card-large fut17 bronze">
-      <div id="art" class="playercard-art not-draggable"></div>
-      <div id="name" class="input-toggle playercard-name">MESSI</div>
-      <div id="rating" class="input-toggle playercard-rating">93</div>
-      <div id="position" class="input-toggle playercard-position">RW</div>
-      
-      <div id="attr1" class="input-toggle playercard-attr playercard-attr1">89 PAC</div>
-      <div id="attr2" class="input-toggle playercard-attr playercard-attr2">90 SHO</div>
-      <div id="attr3" class="input-toggle playercard-attr playercard-attr3">86 PAS</div>
-      <div id="attr4" class="input-toggle playercard-attr playercard-attr4">96 DRI</div>
-      <div id="attr5" class="input-toggle playercard-attr playercard-attr5">26 DEF</div>
-      <div id="attr6" class="input-toggle playercard-attr playercard-attr6">61 PHY</div>
-      
-      <div id="nation" class="playercard-nation change-nation draggable ui-draggable"><img src="http://futhead.cursecdn.com/static/img/17/nations/18.png"></div>
-      <div id="club" class="playercard-club change-club draggable ui-draggable"><img src="http://futhead.cursecdn.com/static/img/17/clubs/241.png"></div>
-      <div id="picture" class="playercard-picture change-player draggable ui-draggable"><img src="http://futhead.cursecdn.com/static/img/17/players/158023.png"></div>
-      <div class="playercard-chem not-draggable chem-icon style-basic" src="/static/img/chemistry/undefined.png">
-          <span id="chem" class="chem-name input-toggle">BASIC</span>
-          <span id="ruler" class="hidee"></span>
-      </div>
-      <input id="custom-text" class="hidee">
-    </div>
-
-  </div>
-</div>
-
-</div>
-
-
-<div class="row">
-  <div class="col">
-  Test
-  </div>
-  <div class="col">
-test 2
-  </div>
-  <div class="col">
-test 3
-  </div>
-</div>

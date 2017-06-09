@@ -1,7 +1,4 @@
-le calendar !
+<ng-container *ngFor="let match of matchs">
+<div class="match" (click)="goTo(5);">{{ match.date }} : {{ match.team_home.name }} vs {{ match.team_outside.name }} : {{ match.score_home }} - {{ match.score_outside }}</div>
 
-<div class="match" (click)="goTo(1);">Le match 1</div>
-<div class="match" (click)="goTo(2);">Le match 2</div>
-<div class="match" (click)="goTo(3);">Le match 3</div>
-<div class="match" (click)="goTo(4)">Le match 4</div>
-<div class="match" (click)="goTo(5);">Le match 5</div>
+</ng-container>

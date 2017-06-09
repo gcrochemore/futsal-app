@@ -18,14 +18,21 @@
   </li>
 </ul>-->
 
+<div class="app_header">
+  <div class="item" (click)="cancel()">< Retour</div>
+  <div class="item" (click)="goTo('/users')">Users</div>
+  <div class="item" (click)="goTo('/')">Matchs</div>
+</div>
 
-<div (click)="cancel()">< Retour</div>
-<div (click)="goTo('/users')">Users</div>
-<div (click)="goTo('/')">Matchs</div>
+<div class="app_content">
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>
 
-<main>
-  <router-outlet></router-outlet>
-</main>
 
-Version : {{ version }}
+<div class="app_footer">
+  Version : {{ version }}
+</div>
+
 

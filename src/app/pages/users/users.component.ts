@@ -1,8 +1,8 @@
 import {Component, NgZone, OnDestroy, OnInit, ViewChild, ViewEncapsulation, isDevMode} from "@angular/core";
 import {Router} from "@angular/router";
-import { Http, Response } from '@angular/http';
-import 'rxjs/add/operator/map';
+import {Headers, RequestOptions, Request, RequestMethod, Http, Response } from '@angular/http';
 import {environment} from "../../../environments/environment";
+import {User} from "../../entities/user";
 
 @Component({
     selector: 'users',
@@ -25,7 +25,7 @@ export class UsersComponent {
                    {name: 'Joueur 5', rating: 76, picture: 'messi.png', company: 'trsb.png'},
                    {name: 'Joueur 6', rating: 84, picture: 'messi.png', company: 'trsb.png'}];
 
-  players_api: [{}] = [{name: 'Player API !', rating: 81, picture: 'lacazette.png', company: 'trsb.png'}];
+  players_api: User[] = [];
 
   constructor(private router: Router,
               private http: Http) {
@@ -33,12 +33,21 @@ export class UsersComponent {
 
     ngOnInit(){
       console.log('init ');
-      this.http.get(environment.api + `users.json`)
-        .subscribe(data => console.log('La reponse : ', data.json()));
+      let headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
+      let options = new RequestOptions({ headers: headers });
+
+      this.http.get(environment.api + `users.json`, options)
+        .subscribe(data => this.players_api = User.deserializeArray(data.json()));
     }
 
     goTo(idMatch){
       this.router.navigate(['match/' + idMatch ]);
+    }
+
+    sort_by_rating(){
+      this.players_api.sort(function (a, b) {
+        return b.rating - a.rating;
+      });
     }
 
 }
