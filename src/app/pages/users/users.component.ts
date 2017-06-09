@@ -9,6 +9,19 @@ import {Router} from "@angular/router";
 })
 
 export class UsersComponent {
+
+  players: [{}] = [{name: 'Souleymane', rating: 75, picture: 'lacazette.png'},
+                   {name: 'Mederic', rating: 80, picture: 'ronaldo.png'},
+                   {name: 'Guillaume', rating: 80, picture: 'forlan.png'},
+                   {name: 'Arthur', rating: 65, picture: 'mathieu.png'},
+                   {name: 'Etienne', rating: 76, picture: 'rooney.png'},
+                   {name: 'Gwen', rating: 78, picture: 'gillet.png'},
+                   {name: 'Joueur 2', rating: 60, picture: 'messi.png'},
+                   {name: 'Joueur 3', rating: 80, picture: 'messi.png'},
+                   {name: 'Joueur 4', rating: 65, picture: 'messi.png'},
+                   {name: 'Joueur 5', rating: 76, picture: 'messi.png'},
+                   {name: 'Joueur 6', rating: 84, picture: 'messi.png'}];
+
   constructor(private router: Router) {
     }
 
