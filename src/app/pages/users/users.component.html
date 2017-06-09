@@ -43,6 +43,53 @@
 </ng-container>
 
 
+<ng-container *ngFor="let player of players_api">
+  <div class="player-fut" [ngClass]="(player?.rating > 78)?'gold-fut':(player?.rating < 70)?'bronze-fut':'silver-fut'">
+    <div class="name">
+      {{ player?.name.toUpperCase() }}
+    </div>
+    <div class="rating">
+      {{ player?.rating }}
+    </div>
+    <div class="picture">
+      <img src="../../../assets/images/fifa/players/{{ player?.picture }}">
+    </div>
+    <div class="company">
+      <img src="../../../assets/images/fifa/companies/{{ player?.company }}">
+    </div>
+    <div class="nationality">
+      <img src="../../../assets/images/fifa/nationalities/french.png">
+    </div>
+
+    <div class="attr1">
+      89 PAC
+    </div>
+
+    <div class="attr2">
+      90 SHO
+    </div>
+
+    <div class="attr3">
+      86 PAS
+    </div>
+
+    <div class="attr4">
+      96 DRI
+    </div>
+
+    <div class="attr5">
+      26 DEF
+    </div>
+
+    <div class="attr6">
+      61 PHY
+    </div>
+  </div>     
+</ng-container>
+
+
+
+
 <br>
 <br>
 <br>

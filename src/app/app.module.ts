@@ -9,6 +9,7 @@ import { UsersComponent } from './pages/users/users.component';
 
 import {routing, appRoutingProviders} from "./app.routes";
 
+import {HttpModule} from "@angular/http";
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import {routing, appRoutingProviders} from "./app.routes";
     UsersComponent
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     routing
   ],

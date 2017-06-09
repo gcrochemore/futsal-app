@@ -1,5 +1,8 @@
 import {Component, NgZone, OnDestroy, OnInit, ViewChild, ViewEncapsulation, isDevMode} from "@angular/core";
 import {Router} from "@angular/router";
+import { Http, Response } from '@angular/http';
+import 'rxjs/add/operator/map';
+import {environment} from "../../../environments/environment";
 
 @Component({
     selector: 'users',
@@ -22,7 +25,16 @@ export class UsersComponent {
                    {name: 'Joueur 5', rating: 76, picture: 'messi.png', company: 'trsb.png'},
                    {name: 'Joueur 6', rating: 84, picture: 'messi.png', company: 'trsb.png'}];
 
-  constructor(private router: Router) {
+  players_api: [{}] = [{name: 'Player API !', rating: 81, picture: 'lacazette.png', company: 'trsb.png'}];
+
+  constructor(private router: Router,
+              private http: Http) {
+    }
+
+    ngOnInit(){
+      console.log('init ');
+      this.http.get(environment.api + `users.json`)
+        .subscribe(data => console.log('La reponse : ', data.json()));
     }
 
     goTo(idMatch){
