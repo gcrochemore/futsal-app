@@ -3,6 +3,9 @@ import {Team} from "./team";
 export class FutsalGame {
   team_home:Team = null;
   team_outside:Team = null;
+  date: any = null;
+  score_home:number = null;
+  score_outside:number = null;
 
   deserialize(json: {}): FutsalGame {
     for (let prop in json) {
