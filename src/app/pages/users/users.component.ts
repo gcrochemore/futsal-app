@@ -17,7 +17,7 @@ export class UsersComponent {
                    {name: 'Etienne', rating: 76, picture: 'rooney.png', company: 'trsb.png'},
                    {name: 'Gwen', rating: 78, picture: 'gillet.png', company: 'trsb.png'},
                    {name: 'Clement', rating: 80, picture: 'bernardo-silva.png', company: 'trsb.png'},
-                   {name: 'Joueur 3', rating: 80, picture: 'messi.png', company: 'trsb.png'},
+                   {name: 'Robin', rating: 70, picture: 'ribery.png', company: 'trsb.png'},
                    {name: 'Joueur 4', rating: 65, picture: 'messi.png', company: 'trsb.png'},
                    {name: 'Joueur 5', rating: 76, picture: 'messi.png', company: 'trsb.png'},
                    {name: 'Joueur 6', rating: 84, picture: 'messi.png', company: 'trsb.png'}];
