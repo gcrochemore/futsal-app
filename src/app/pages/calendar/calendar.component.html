@@ -1,4 +1,4 @@
 <ng-container *ngFor="let match of matchs">
-<div class="match" (click)="goTo(5);">{{ match.date }} : {{ match.team_home.name }} vs {{ match.team_outside.name }} : {{ match.score_home }} - {{ match.score_outside }}</div>
+<div class="match" (click)="goTo(match.id);">{{ match?.date?.toISOString() }} : {{ match.team_home.name }} vs {{ match.team_outside.name }} : {{ match.score_home }} - {{ match.score_outside }}</div>
 
 </ng-container>

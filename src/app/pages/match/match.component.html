@@ -1,3 +1,7 @@
 Le contenu du match {{ idMatch }}
 
-<div class="match">{{ match?.date }} : {{ match?.team_home?.name }} vs {{ match?.team_outside?.name }} : {{ match?.score_home }} - {{ match?.score_outside }}</div>
+<div class="match">{{ match?.date?.toISOString() }} : {{ match?.team_home?.name }} vs {{ match?.team_outside?.name }} : {{ match?.score_home }} - {{ match?.score_outside }}</div>
+
+<team [players]="match?.team_home_players" [team]="match?.team_home"></team>
+
+<team [players]="match?.team_outside_players" [team]="match?.team_outside"></team>

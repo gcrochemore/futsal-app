@@ -7,6 +7,9 @@ import { CalendarComponent } from './pages/calendar/calendar.component';
 import { MatchComponent } from './pages/match/match.component';
 import { UsersComponent } from './pages/users/users.component';
 
+import { FifaCardComponent } from './components/fifa-card/fifa-card.component';
+import { TeamComponent } from './components/team/team.component';
+
 import {routing, appRoutingProviders} from "./app.routes";
 
 import {HttpModule} from "@angular/http";
@@ -19,6 +22,10 @@ import {HttpModule} from "@angular/http";
     CalendarComponent,
     MatchComponent,
     UsersComponent
+    UsersComponent,
+
+    FifaCardComponent,
+    TeamComponent
   ],
   imports: [
     HttpModule,

@@ -29,7 +29,10 @@ export class MatchComponent {
         let options = new RequestOptions({ headers: headers });
 
         this.http.get(environment.api + `futsal_games/` + this.idMatch + `.json`, options)
-          .subscribe(data => this.match = new FutsalGame().deserialize(data.json()));
+          .subscribe(data => {
+            this.match = new FutsalGame().deserialize(data.json());
+            console.log('je recupere le match', this.match);
+          });
       });
   }
 

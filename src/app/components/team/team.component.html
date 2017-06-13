@@ -1,0 +1,4 @@
+<span class="team_name">{{ team?.name }}</span>
+<ng-container *ngFor="let player of players">
+  <fifa-card [player]="player"></fifa-card>
+</ng-container>

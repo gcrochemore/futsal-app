@@ -19,7 +19,6 @@ export class CalendarComponent {
     }
 
     ngOnInit(){
-      console.log('init ');
       let headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
       let options = new RequestOptions({ headers: headers });
 

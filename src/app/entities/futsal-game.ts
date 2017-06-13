@@ -1,9 +1,10 @@
 import {Team} from "./team";
+import {User} from "./user";
 
 export class FutsalGame {
   team_home:Team = null;
   team_outside:Team = null;
-  date: any = null;
+  date: Date = null;
   score_home:number = null;
   score_outside:number = null;
 
@@ -11,9 +12,13 @@ export class FutsalGame {
     for (let prop in json) {
       if(prop == 'team_home' || prop == 'team_outside'){
         this[prop] = new Team().deserialize(json[prop]);
-      }else{
+      }else if(prop == 'team_home_players' || prop == 'team_outside_players'){
+        this[prop] = User.deserializeArray(json[prop]);
+      }else if(prop == 'date'){
+        this[prop] = new Date(json[prop]);
+       }else{
         this[prop] = json[prop];
-       }
+      }
     }
     return this;
   }
