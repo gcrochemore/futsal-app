@@ -1,7 +1,15 @@
-Le contenu du match {{ idMatch }}
+<spinner [isRunning]="isRequesting"></spinner>
 
-<div class="match">{{ match?.date?.toISOString() }} : {{ match?.team_home?.name }} vs {{ match?.team_outside?.name }} : {{ match?.score_home }} - {{ match?.score_outside }}</div>
+<ng-container *ngIf="!isRequesting">
+  Le contenu du match {{ idMatch }}
 
-<team [players]="match?.team_home_players" [team]="match?.team_home"></team>
+  <div class="match">{{ match?.date?.toISOString() }} : {{ match?.team_home?.name }} vs {{ match?.team_outside?.name }} : {{ match?.score_home }} - {{ match?.score_outside }}</div>
 
-<team [players]="match?.team_outside_players" [team]="match?.team_outside"></team>
+  <team [players]="match?.team_home_players" [team]="match?.team_home"></team>
+
+  <team [players]="match?.team_outside_players" [team]="match?.team_outside"></team>
+
+  <ng-container *ngFor="let goal of match?.goals">
+    <goal [goal]="goal"></goal>
+  </ng-container>  
+</ng-container>

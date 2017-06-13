@@ -9,6 +9,8 @@ import { UsersComponent } from './pages/users/users.component';
 
 import { FifaCardComponent } from './components/fifa-card/fifa-card.component';
 import { TeamComponent } from './components/team/team.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { GoalComponent } from './components/goal/goal.component';
 
 import {routing, appRoutingProviders} from "./app.routes";
 
@@ -21,11 +23,12 @@ import {HttpModule} from "@angular/http";
 
     CalendarComponent,
     MatchComponent,
-    UsersComponent
     UsersComponent,
 
     FifaCardComponent,
-    TeamComponent
+    TeamComponent,
+    SpinnerComponent,
+    GoalComponent
   ],
   imports: [
     HttpModule,

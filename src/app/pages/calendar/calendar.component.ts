@@ -12,18 +12,23 @@ import {environment} from "../../../environments/environment";
 })
 
 export class CalendarComponent {
-    matchs: FutsalGame[] = [];
+  public isRequesting: boolean;
+  matchs: FutsalGame[] = [];
 
   constructor(private router: Router,
               private http: Http) {
     }
 
     ngOnInit(){
+      this.isRequesting = true;
       let headers = new Headers({ 'Access-Control-Allow-Origin': '*' });
       let options = new RequestOptions({ headers: headers });
 
       this.http.get(environment.api + `futsal_games.json`, options)
-        .subscribe(data => this.matchs = FutsalGame.deserializeArray(data.json()));
+        .subscribe(data => {
+          this.matchs = FutsalGame.deserializeArray(data.json());
+          this.isRequesting = false
+         });
     }
 
     goTo(idMatch){

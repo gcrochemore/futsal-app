@@ -2,9 +2,9 @@
 import {Company} from "./company";
 
 export class User {
-  last_name: string = 'LASTNAME';
-  first_name: string = 'FIRSTNAME';
-  name:string = 'NAME';
+  last_name: string = '';
+  first_name: string = '';
+  name:string = '';
   rating: number = 78;
   picture: string = 'inconnu.jpg';
   company: Company = null;

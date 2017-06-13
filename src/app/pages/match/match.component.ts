@@ -12,6 +12,7 @@ import {environment} from "../../../environments/environment";
 })
 
 export class MatchComponent {
+  public isRequesting: boolean;
 
   idMatch: number;
   match: FutsalGame;
@@ -22,6 +23,7 @@ export class MatchComponent {
   }
     
   ngOnInit() {
+    this.isRequesting = true;
     this.route.params
       .subscribe(params => {
         this.idMatch = Number(params['idMatch']);
@@ -31,7 +33,7 @@ export class MatchComponent {
         this.http.get(environment.api + `futsal_games/` + this.idMatch + `.json`, options)
           .subscribe(data => {
             this.match = new FutsalGame().deserialize(data.json());
-            console.log('je recupere le match', this.match);
+            this.isRequesting = false;
           });
       });
   }

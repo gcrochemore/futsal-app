@@ -1,7 +1,11 @@
-<button (click)="sort_by_rating()">Trier par note</button>
-<hr>
-<ng-container *ngFor="let player of players_api">
-  <fifa-card [player]="player"></fifa-card>
+<spinner [isRunning]="isRequesting"></spinner>
+
+<ng-container *ngIf="!isRequesting">
+  <button (click)="sort_by_rating()">Trier par note</button>
+  <hr>
+  <ng-container *ngFor="let player of players">
+    <fifa-card [player]="player"></fifa-card>
+  </ng-container>
 </ng-container>
 
 

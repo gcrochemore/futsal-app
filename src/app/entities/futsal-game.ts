@@ -1,5 +1,6 @@
 import {Team} from "./team";
 import {User} from "./user";
+import {Goal} from "./goal";
 
 export class FutsalGame {
   team_home:Team = null;
@@ -14,6 +15,8 @@ export class FutsalGame {
         this[prop] = new Team().deserialize(json[prop]);
       }else if(prop == 'team_home_players' || prop == 'team_outside_players'){
         this[prop] = User.deserializeArray(json[prop]);
+      }else if(prop == 'goals'){
+        this[prop] = Goal.deserializeArray(json[prop]);
       }else if(prop == 'date'){
         this[prop] = new Date(json[prop]);
        }else{
