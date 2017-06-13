@@ -30,3 +30,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Heroku
 
   heroku logs --tail --app futsal-app
+
+
+## Cordova
+
+    ng build --target=production --environment=prod --output-path cordova/www/
+    cd cordova
+    cordova run android
