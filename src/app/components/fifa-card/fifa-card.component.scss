@@ -1,9 +1,14 @@
+.player-fut:hover
+{
+    zoom: 0.8;
+}
 
 .player-fut{
   width: 202px;
   height: 310px;
   float: left;
   position : relative;
+  zoom: 0.6;
 
   .name{
     position : absolute;
