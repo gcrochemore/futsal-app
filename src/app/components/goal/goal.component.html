@@ -1,5 +1,11 @@
 <div class="but">
-  Buteur : {{ goal?.goal?.name }}<br>
-  Passeur : {{ goal?.assist?.name }}<br>
+  <div *ngIf="goal?.goal" class="goal">
+    <div class="title">Buteur</div> 
+    <fifa-card [player]="goal.goal"></fifa-card>
+  </div>
+  <div *ngIf="goal?.assist" class="assist">
+    <div class="title">Passeur</div>
+    <fifa-card [player]="goal.assist"></fifa-card>
+  </div>
   Minute : {{ goal?.time }}<br>
 </div>

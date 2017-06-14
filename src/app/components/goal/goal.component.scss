@@ -3,4 +3,22 @@
   border-radius: 5px;
   float:left;
   padding: 5px;
+  width: 80%;
+
+  fifa-card{
+    zoom: 0.4;
+  }
+
+  fifa-card:hover{
+    zoom: 0.8;
+  }
+
+  .title{
+    text-align: center;
+  }
+
+  .goal, .assist{
+    width: 30%;
+    float: left;
+  }
 }
