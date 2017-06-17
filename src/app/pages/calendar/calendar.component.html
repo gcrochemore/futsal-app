@@ -2,6 +2,23 @@
 
 <ng-container *ngFor="let match of matchs">
 
-  <div class="match" (click)="goTo(match.id);">{{ match?.date?.toISOString() }} : {{ match.team_home.name }} vs {{ match.team_outside.name }} : {{ match.score_home }} - {{ match.score_outside }}</div>
-
+  <div class="match" (click)="goTo(match.id);">
+    <div class="date">{{ match?.date | date:"dd/MM/yy hh:mm" }}</div>
+    <div [ngClass]="{'team': true, 'winner' : (match.score_home > match.score_outside) }">
+      <div class="name">
+        {{ match.team_home.name }}
+      </div>
+      <div class="score">
+        {{ match.score_home }}
+      </div>
+    </div>
+    <div [ngClass]="{'team': true, 'winner' : (match.score_home < match.score_outside) }">
+      <div class="name">
+        {{ match.team_outside.name }}
+      </div>
+      <div class="score">
+        {{ match.score_outside }}
+      </div>
+    </div>
+  </div>
 </ng-container>

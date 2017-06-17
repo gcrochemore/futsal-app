@@ -6,11 +6,11 @@
   width: 80%;
 
   fifa-card{
-    zoom: 0.4;
+    transform: scale(0.5);
   }
 
   fifa-card:hover{
-    zoom: 0.8;
+    transform: scale(2);
   }
 
   .title{

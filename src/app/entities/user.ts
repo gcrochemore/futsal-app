@@ -5,7 +5,7 @@ export class User {
   last_name: string = '';
   first_name: string = '';
   name:string = '';
-  rating: number = 78;
+  rating: number = 65;
   picture: string = 'inconnu.jpg';
   company: Company = null;
   goal: number = 0;
@@ -27,7 +27,6 @@ export class User {
       
     }
     this.name = this.first_name + ' ' + this.last_name;
-    this.rating = 65 + (this.goal_average_by_match + this.assist_average_by_match) * 2;
     return this;
   }
 

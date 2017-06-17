@@ -1,5 +1,29 @@
 .match {
   padding: 5px;
-  border: 1px solid black;
   margin-top: 5px;
+
+  .date {
+    width: 100%;
+    background-color: #EFEFEF;
+    float: left;
+    text-align: center;
+  }
+
+  .team{
+    width: 100%;
+    float: left;
+    .name{
+      width: 70%;
+      float: left;
+    }
+    .score{
+      width: 30%;
+      float: left;
+      text-align: right;
+    }
+  }
+
+  .winner{
+    font-weight: 700;
+  }
 }
