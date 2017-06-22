@@ -8,6 +8,7 @@ export class FutsalGame {
   date: Date = null;
   score_home:number = null;
   score_outside:number = null;
+  rating:number = null;
 
   deserialize(json: {}): FutsalGame {
     for (let prop in json) {
