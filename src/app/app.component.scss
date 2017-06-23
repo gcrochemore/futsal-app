@@ -8,7 +8,7 @@ body {
   background-color: white;
   position: fixed;
   top: 0;
-  background-image:linear-gradient(dodgerblue, lavender);
+  background-image:linear-gradient(grey, lavender);
   text-align: center;
   font-weight: 700;
   z-index: 100;
@@ -27,7 +27,7 @@ body {
   bottom: 0;
   background-color: white;
   padding: 5px;
-  background-image:linear-gradient(lavender, dodgerblue);
+  background-image:linear-gradient(lavender, grey);
   z-index: 100;
 
   .item {
