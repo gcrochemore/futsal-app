@@ -14,6 +14,7 @@ export class User {
   assist_average_by_match: number = 0.0;
   match: number = 0;
   match_with_stats: number = 0;
+  position: string = '?';
 
   deserialize(json: {}): User {
     for (let prop in json) {
