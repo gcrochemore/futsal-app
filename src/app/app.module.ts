@@ -15,6 +15,7 @@ import { GoalComponent } from './components/goal/goal.component';
 import {routing, appRoutingProviders} from "./app.routes";
 
 import {HttpModule} from "@angular/http";
+import {AngularFontAwesomeModule} from "angular-font-awesome";
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {HttpModule} from "@angular/http";
   imports: [
     HttpModule,
     BrowserModule,
-    routing
+    routing,
+    AngularFontAwesomeModule
   ],
   providers: [
     appRoutingProviders

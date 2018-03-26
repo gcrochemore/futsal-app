@@ -9,11 +9,10 @@ body {
   position: fixed;
   top: 0;
   text-align: center;
-  font-weight: 700;
   z-index: 100;
   vertical-align: middle;
   padding-top: 10px;
-  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-family: Impact, Charcoal, sans-serif;
   font-size: 150%;
   color: #1560BD;
 }
@@ -30,7 +29,6 @@ body {
   position: fixed;
   bottom: 0;
   background-color: white;
-  padding: 5px;
   background-image:linear-gradient(lavender, grey);
   z-index: 100;
 
@@ -38,5 +36,8 @@ body {
     padding: 5px;
     float: left;
     border: 1px solid black;
+    height: 40px;
+    font-size: 70%;
+    text-align: center;
   }
 }
